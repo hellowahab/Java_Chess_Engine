@@ -122,7 +122,7 @@ public class Board {
         builder.setPiece(new Pawn(Alliance.BLACK, 13));
         builder.setPiece(new Pawn(Alliance.BLACK, 14));
         builder.setPiece(new Pawn(Alliance.BLACK, 15));
-        //WHITE LAYOUT
+        //WHITE LAYOUT github test
         builder.setPiece(new Pawn(Alliance.WHITE, 48));
         builder.setPiece(new Pawn(Alliance.WHITE, 49));
         builder.setPiece(new Pawn(Alliance.WHITE, 50));
