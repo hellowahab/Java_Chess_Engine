@@ -241,6 +241,7 @@ public class Table {
         public void drawTile(final Board board){
             assignTileColor();
             assignTilePieceIcon(board);
+            highlightLegals(board);
             validate();
             repaint();
         }
