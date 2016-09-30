@@ -26,7 +26,7 @@ import static javax.swing.SwingUtilities.isLeftMouseButton;
 import static javax.swing.SwingUtilities.isRightMouseButton;
 
 /**
- * JChess: Created by mertkarakas on 9/9/2016. //video 37 8:56
+ * JChess: Created by mertkarakas on 9/9/2016. //github repo commit/push test
  */
 public class Table {
 
