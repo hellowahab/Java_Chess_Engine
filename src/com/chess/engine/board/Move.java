@@ -57,6 +57,10 @@ public abstract class Move {
                 getMovedPiece().equals(otherMove.getMovedPiece());
     }
 
+    public Board getBoard(){
+        return this.board;
+    }
+
     public int getCurrentCoordinate(){
         return this.getMovedPiece().getPiecePosition();
     }
@@ -227,6 +231,57 @@ public abstract class Move {
 
     }
 
+    public static class PawnPromotion extends Move{
+        //decorator design pattern - add functionality during RUNTIME (subclass works while compiling)
+        final Move decoratedMove;
+        final Pawn promotedPawn;
+        public PawnPromotion(final Move decoratedMove) {
+            super(decoratedMove.getBoard(), decoratedMove.getMovedPiece(), decoratedMove.getDestinationCoordinate());
+            this.decoratedMove = decoratedMove;
+            this.promotedPawn = (Pawn) decoratedMove.getMovedPiece();
+        }
+        //(from Chapter 3, Item 9: Always override hashcode when you override equals, page 48) Joshua Bloch's Effective Java
+        //31 is good because it is odd (even numbers would cause a shift and data would be lost)
+        @Override
+        public int hashCode(){
+            return decoratedMove.hashCode() + (31 * promotedPawn.hashCode());
+        }
+        @Override
+        public boolean equals(final Object other){
+            return this == other || other instanceof PawnPromotion && this.decoratedMove.equals(other);
+        }
+        @Override
+        public Board execute(){
+            final Board pawnMovedBoard = this.decoratedMove.execute();
+            final Board.Builder builder = new Builder();
+            for (final Piece piece : pawnMovedBoard.currentPlayer().getActivePieces()){
+                if (!this.promotedPawn.equals(piece)){
+                    builder.setPiece(piece);
+                }
+            }
+            for (final Piece piece : pawnMovedBoard.currentPlayer().getOpponent().getActivePieces()){
+                builder.setPiece(piece);
+            }
+            builder.setPiece(this.promotedPawn.getPromotionPiece().movePiece(this));
+            builder.setMoveMaker(pawnMovedBoard.currentPlayer().getAlliance());
+            return builder.build();
+        }
+        @Override
+        public boolean isAttack(){
+            return this.decoratedMove.isAttack();
+        }
+        @Override
+        public Piece getAttackedPiece(){
+            return this.decoratedMove.getAttackedPiece();
+        }
+
+        @Override
+        public String toString(){
+            return "";
+        }
+
+
+    }
     public static final class PawnJump extends Move {
         public PawnJump(final Board board, final Piece movedPiece, final int destinationCoordinate) {
             super(board, movedPiece, destinationCoordinate);
@@ -318,7 +373,6 @@ public abstract class Move {
             return super.equals(otherCastleMove) && this.castleRook.equals(otherCastleMove.getCastleRook());
         }
     }
-    //#27 for check reference
     public static final class KingSideCastleMove extends CastleMove {
         public KingSideCastleMove(final Board board,
                                   final Piece movedPiece,
