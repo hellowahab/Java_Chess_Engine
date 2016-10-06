@@ -85,12 +85,11 @@ public abstract class Player {
     public boolean isCastled(){
         return false;
     }
+    
     public MoveTransition makeMove(final Move move){
-
         if (!isMoveLegal(move)){
             return new MoveTransition(this.board, move, MoveStatus.ILLEGAL_MOVE);
         }
-
         final Board transitionBoard = move.execute();
         final Collection<Move> kingAttacks = Player.calculateAttacksOnTile(
                 transitionBoard.currentPlayer().getOpponent().getPlayerKing().getPiecePosition(),
@@ -98,7 +97,6 @@ public abstract class Player {
         if (!kingAttacks.isEmpty()) {
             return new MoveTransition(this.board, move, MoveStatus.LEAVES_PLAYER_IN_CHECK);
         }
-
         return new MoveTransition(transitionBoard, move, MoveStatus.DONE);
     }
 

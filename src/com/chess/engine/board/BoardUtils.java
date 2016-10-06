@@ -66,7 +66,7 @@ public class BoardUtils {
         do{
             column[columnNumber] = true;
             columnNumber += NUM_TILES_PER_ROW;
-        }while(columnNumber < NUM_TILES_PER_ROW);
+        }while(columnNumber < NUM_TILES);
         return column;
     }
 
