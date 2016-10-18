@@ -6,7 +6,7 @@ import com.chess.engine.player.Player;
 import com.chess.engine.player.WhitePlayer;
 
 /**
- * JChess: Created by mertkarakas on 9/3/2016.
+ * Java_Chess_Engine: Created by mertkarakas on 9/3/2016.
  */
 public enum Alliance {
     WHITE {

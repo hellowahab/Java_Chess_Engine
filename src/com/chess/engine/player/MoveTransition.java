@@ -4,7 +4,7 @@ import com.chess.engine.board.Board;
 import com.chess.engine.board.Move;
 
 /**
- * JChess: Created by mertkarakas on 9/4/2016.
+ * Java_Chess_Engine: Created by mertkarakas on 9/4/2016.
  */
 public class MoveTransition {
 

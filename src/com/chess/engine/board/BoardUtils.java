@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by Student on 9/3/2016.
+ * Java_Chess_Engine: Created by Student on 9/3/2016.
  */
 public class BoardUtils {
 

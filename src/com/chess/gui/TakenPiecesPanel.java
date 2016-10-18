@@ -16,7 +16,7 @@ import java.util.*;
 import java.util.List;
 
 /**
- * JChess: Created by mertkarakas on 9/29/2016.
+ * Java_Chess_Engine: Created by mertkarakas on 9/29/2016.
  */
 public class TakenPiecesPanel extends JPanel{
 

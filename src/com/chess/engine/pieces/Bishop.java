@@ -14,7 +14,7 @@ import java.util.List;
 import static com.chess.engine.board.Move.*;
 
 /**
- * JChess: Created by mertkarakas on 9/3/2016.
+ * Java_Chess_Engine: Created by mertkarakas on 9/3/2016.
  */
 public class Bishop extends Piece{
 

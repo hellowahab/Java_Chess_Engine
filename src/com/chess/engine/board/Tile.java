@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * JChess: Created by mertkarakas on 9/2/2016.
+ * Java_Chess_Engine: Created by mertkarakas on 9/2/2016.
  */
 public abstract class Tile {
 

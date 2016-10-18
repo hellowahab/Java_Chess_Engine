@@ -1,7 +1,7 @@
 package com.chess.engine.player;
 
 /**
- * JChess: Created by mertkarakas on 9/4/2016.
+ * Java_Chess_Engine: Created by mertkarakas on 9/4/2016.
  */
 public enum MoveStatus {
     DONE {

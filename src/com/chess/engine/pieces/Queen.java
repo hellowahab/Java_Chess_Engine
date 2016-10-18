@@ -15,7 +15,7 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * JChess: Created by mertkarakas on 9/4/2016.
+ * Java_Chess_Engine: Created by mertkarakas on 9/4/2016.
  */
 public class Queen extends Piece {
 

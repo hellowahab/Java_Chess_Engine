@@ -7,7 +7,7 @@ import com.chess.engine.pieces.Rook;
 import static com.chess.engine.board.Board.*;
 
 /**
- * JChess: Created by mertkarakas on 9/3/2016.
+ * Java_Chess_Engine: Created by mertkarakas on 9/3/2016.
  */
 public abstract class Move {
 
